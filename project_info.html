@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kids Fun Zone</title>
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+    <header>
+        <h1>Kids Fun Zone</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="mission.html">Mission</a></li>
+                <li><a href="project_info.html">Project info</a></li>
+                <li><a href="#" onclick="openDashboard()">Dashboard</a></li>
+                <li><a href="#" onclick="openPredictionModel()">Prediction model</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <section id="Project info">
+        <h2>Project Goal</h2>
+        <p>
+            The goal of this Power BI project is to design an interactive and insightful dashboard for Kids Fun Zone
+            Madurai that helps the management make data-driven decisions by tracking key business metrics such as
+            visitor trends, revenue performance, peak activity hours, and customer engagement.
+        </p>
+        <h3>This dashboard aims to:</h3>
+        <ul>
+            <li>Visualize operational performance through clean, intuitive visuals
+            </li>
+            <li>Identify high-traffic periods and underperforming time slots
+            </li>
+            <li>Analyze customer behavior and preferences
+            </li>
+            <li>Optimize staffing and resource allocation</li>
+        </ul>
+        <li>Support business growth by highlighting key revenue drivers and opportunities for promotions or events</li>
+        </ul>
+
+        <h3>Data Source
+        </h3>
+        <p>The data for this project was originally maintained manually in a physical ledger at the venue. To enable
+            analytics and visualization, this information was digitalized and converted into CSV format for use in Power
+            BI.</p>
+        <h1>Kids Fun Zone - Data Overview</h1>
+
+        <!-- Table 1: Grouped Visit Data -->
+        <h2>Grouped Visit Data</h2>
+        <section id="grouped-data">
+            <table class="grouped">
+                <thead>
+                    <tr>
+                        <th>Group_ID</th>
+                        <th>Group_Size</th>
+                        <th>Divided_Cash (₹)</th>
+                        <th>Divided_Gpay (₹)</th>
+                        <th>Total_Revenue (₹)</th>
+                        <th>Age_Group</th>
+                        <th>Play</th>
+                        <th>Visit_Duration (hrs)</th>
+                        <th>Parent_Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>300</td>
+                        <td>300</td>
+                        <td>4–5</td>
+                        <td>Membership</td>
+                        <td>1</td>
+                        <td>No Parent Present</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>300</td>
+                        <td>300</td>
+                        <td>6–7</td>
+                        <td>Membership</td>
+                        <td>1</td>
+                        <td>No Parent Present</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>359</td>
+                        <td>0</td>
+                        <td>359</td>
+                        <td>4–5</td>
+                        <td>One Time</td>
+                        <td>1.5</td>
+                        <td>Parent Present</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="sample-data">
+            <h2>Synthetic Sample Data</h2>
+            <table class="sample">
+                <thead>
+                    <tr>
+                        <th>DATE</th>
+                        <th>CHILD NAME</th>
+                        <th>AGE</th>
+                        <th>AREA</th>
+                        <th>CONTACT NUMBER</th>
+                        <th>CHECK IN</th>
+                        <th>CHECK OUT</th>
+                        <th>CHILD</th>
+                        <th>PARENT</th>
+                        <th>CASH (₹)</th>
+                        <th>GPAY (₹)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2025-04-18</td>
+                        <td>Aarav</td>
+                        <td>5</td>
+                        <td>Anna Nagar</td>
+                        <td>7777777777</td>
+                        <td>17:00</td>
+                        <td>18:00</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>200</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>2025-04-18</td>
+                        <td>Meera</td>
+                        <td>4</td>
+                        <td>KK Nagar</td>
+                        <td>888888888</td>
+                        <td>16:30</td>
+                        <td>17:30</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>150</td>
+                    </tr>
+                    <tr>
+                        <td>2025-04-18</td>
+                        <td>Dhruv</td>
+                        <td>6</td>
+                        <td>Iyer Bung.</td>
+                        <td>999999999</td>
+                        <td>11:00</td>
+                        <td>12:00</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>100</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>2025-04-19</td>
+                        <td>Aanya</td>
+                        <td>3</td>
+                        <td>TVS Nagar</td>
+                        <td>7897987989</td>
+                        <td>11:15</td>
+                        <td>12:15</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>170</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>2025-04-19</td>
+                        <td>Rahul</td>
+                        <td>7</td>
+                        <td>Simmakkal</td>
+                        <td>4564564566</td>
+                        <td>18:00</td>
+                        <td>19:00</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>Membership</td>
+                    </tr>
+                    <tr>
+                        <td>2025-04-20</td>
+                        <td>Nisha</td>
+                        <td>5</td>
+                        <td>Goripalayam</td>
+                        <td>1231231231</td>
+                        <td>11:30</td>
+                        <td>12:30</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>200</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>2025-04-20</td>
+                        <td>Arjun</td>
+                        <td>4</td>
+                        <td>Thirunagar</td>
+                        <td>1417258369</td>
+                        <td>16:00</td>
+                        <td>17:00</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>Membership</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="column-descriptions">
+            <h2>Descriptions of the New Columns</h2>
+            <table class="description">
+                <thead>
+                    <tr>
+                        <th>Column</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Group_ID</td>
+                        <td>Unique identifier for a group of entries...</td>
+                    </tr>
+                    <tr>
+                        <td>Group_Size</td>
+                        <td>The number of entries (kids + parent)...</td>
+                    </tr>
+                    <tr>
+                        <td>Divided_Cash</td>
+                        <td>Total cash divided per person.</td>
+                    </tr>
+                    <tr>
+                        <td>Divided_Gpay</td>
+                        <td>Total GPay divided per person.</td>
+                    </tr>
+                    <tr>
+                        <td>Total_Revenue</td>
+                        <td>Sum of divided cash and GPay.</td>
+                    </tr>
+                    <tr>
+                        <td>Age_Group</td>
+                        <td>Age grouped as ranges.</td>
+                    </tr>
+                    <tr>
+                        <td>Play</td>
+                        <td>Membership if revenue > ₹600.</td>
+                    </tr>
+                    <tr>
+                        <td>Visit_Duration</td>
+                        <td>Time between Check-In and Check-Out.</td>
+                    </tr>
+                    <tr>
+                        <td>Parent_Status</td>
+                        <td>"Parent Present" if PARENT = 1.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="Synthetic-new-data">
+            <h2>Synthetic Data For New Columns</h2>
+            <table class="newData">
+                <thead>
+                    <tr>
+                        <th>Group_ID</th>
+                        <th>Group_Size</th>
+                        <th>Divided_Cash (₹)</th>
+                        <th>Divided_Gpay (₹)</th>
+                        <th>Total_Revenue (₹)</th>
+                        <th>Age_Group</th>
+                        <th>Play</th>
+                        <th>Visit_Duration (hrs)</th>
+                        <th>Parent_Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>300</td>
+                        <td>300</td>
+                        <td>4–5</td>
+                        <td>Membership</td>
+                        <td>1</td>
+                        <td>No Parent Present</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>300</td>
+                        <td>300</td>
+                        <td>6–7</td>
+                        <td>Membership</td>
+                        <td>1</td>
+                        <td>No Parent Present</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>359</td>
+                        <td>0</td>
+                        <td>359</td>
+                        <td>4–5</td>
+                        <td>One Time</td>
+                        <td>1.5</td>
+                        <td>Parent Present</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <h3>Data Processing Steps</h3>
+        <p>Cleans Contact Numbers</p>
+        <ul>
+            <li>Ensures all CONTACT NUMBER values are strings and fills missing values with an empty string.
+            </li>
+            <li>Why? To standardize the contact number format and avoid issues during grouping or comparisons.
+            </li>
+        </ul>
+        <p>Converts Payment Columns to Numeric</p>
+        <ul>
+            <li>Converts CASH and GPAY columns to numeric types.
+            </li>
+            <li>Invalid or missing entries are converted to NaN.
+            </li>
+            <li>IWhy? This ensures accurate calculations during aggregation (like sum).
+            </li>
+        </ul>
+
+        <section id="python-code">
+            <h2>Python Code Used for Grouping and Revenue Calculation</h2>
+            <pre><code class="python">
+      import pandas as pd
+      
+      file_path = '/content/FINAL AUG-DEC.xlsx'
+      df = pd.read_excel(file_path)
+      
+      df['CONTACT NUMBER'] = df['CONTACT NUMBER'].fillna('').astype(str)
+      
+      df['CASH'] = pd.to_numeric(df['CASH'], errors='coerce')
+      df['GPAY'] = pd.to_numeric(df['GPAY'], errors='coerce')
+      
+      group_id = 0
+      group_ids = []
+      
+      prev_number = None
+      for number in df['CONTACT NUMBER']:
+          if number == prev_number:
+              group_ids.append(group_id)
+          else:
+              group_id += 1
+              group_ids.append(group_id)
+          prev_number = number
+      
+      df['Group_ID'] = group_ids
+      
+      group_counts = df.groupby('Group_ID').size().to_dict()
+      df['Group_Size'] = df['Group_ID'].map(group_counts)
+      
+      cash_totals = df.groupby('Group_ID')['CASH'].sum(min_count=1).to_dict()
+      gpay_totals = df.groupby('Group_ID')['GPAY'].sum(min_count=1).to_dict()
+      
+      df['Divided_Cash'] = df['Group_ID'].map(lambda x: cash_totals.get(x, 0) / group_counts.get(x, 1))
+      df['Divided_Gpay'] = df['Group_ID'].map(lambda x: gpay_totals.get(x, 0) / group_counts.get(x, 1))
+      
+      output_path = '/content/processed1_AUG-DEC.xlsx'
+      df.to_excel(output_path, index=False)
+      print(f'✅ Done! Processed file saved to: {output_path}')
+        </code></pre>
+        </section>
+
+        <h2>Purpose of This Process:</h2>
+        <p>To clean, standardize, and structure the payment data by identifying groups of children coming together,
+            dividing payment amounts fairly, and adding group metadata like size, ID, and shared costs.</p>
+
+        <h2>Group Identification Using Contact Number</h2>
+        <p>Assigns a unique <code>Group_ID</code> based on consecutive rows with the same contact number (assuming they
+            came together).</p>
+        <div class="note">
+            🔹 <strong>Note:</strong> This has a limitation when parents use different contact numbers but make a
+            combined payment — handled in next steps of the project.
+        </div>
+
+        <h2>Calculate Group Size</h2>
+        <p>Counts how many entries are in each <code>Group_ID</code> and adds a new column <code>Group_Size</code>.</p>
+
+        <h2>Group-wise Total Payments</h2>
+        <p>Calculates the total <code>CASH</code> and <code>GPAY</code> paid per group using <code>groupby()</code> and
+            maps those back to individual rows.</p>
+
+        <h2>Divide Payments Fairly</h2>
+        <p>Adds:</p>
+        <ul>
+            <li><strong>Divided_Cash</strong>: Each child gets an equal share of their group’s total cash payment.</li>
+            <li><strong>Divided_Gpay</strong>: Same logic applied for GPay payments.</li>
+        </ul>
+
+        <section id="time-cleaning">
+            <h2>Time Format Standardization & Cleaning</h2>
+            <pre><code class="python">
+          import pandas as pd
+          
+          # Load your Excel file
+          file_path = '/content/processed1_AUG-DEC.xlsx'  # 🔁 Replace this with your actual file path
+          df = pd.read_excel(file_path)
+          
+          # Define a function to clean and convert times to 12-hour format with AM/PM
+          def clean_time(value):
+              try:
+                  parsed = pd.to_datetime(str(value)).time()
+                  return pd.to_datetime(parsed.strftime("%I:%M %p")).strftime("%I:%M %p")
+              except:
+                  return value  # Return original if it can't be parsed
+          
+          # Apply the function to both CHECK IN and CHECK OUT
+          df['CHECK IN'] = df['CHECK IN'].apply(clean_time)
+          df['CHECK OUT'] = df['CHECK OUT'].apply(clean_time)
+          
+          # Save the cleaned data
+          output_path = '/content/time_cleaned.xlsx'
+          df.to_excel(output_path, index=False)
+          print(f'✅ Cleaned Excel file saved at: {output_path}')
+            </code></pre>
+        </section>
+        <h2>Purpose of This Process:</h2>
+        <p>To standardize the <strong>"CHECK IN"</strong> and <strong>"CHECK OUT"</strong> time columns to a consistent
+            12-hour AM/PM format so that time-based calculations and visualizations (e.g., visit duration, peak hours)
+            are accurate and user-friendly.</p>
+
+        <h2>Define a Time Cleaning Function <code>clean_time()</code></h2>
+        <p>This function:</p>
+        <ul>
+            <li>Tries to parse each time value (whether it’s in datetime or string format).</li>
+            <li>Converts it into 12-hour format (e.g., <code>"02:15 PM"</code> instead of <code>"14:15:00"</code>).</li>
+            <li>If it fails to parse (e.g., invalid/missing data), it returns the original value to prevent breaking.
+            </li>
+        </ul>
+
+        <h2>Apply the Function to <code>CHECK IN</code> and <code>CHECK OUT</code> Columns</h2>
+        <p>This ensures both time columns follow a consistent format, which is crucial for:</p>
+        <ul>
+            <li>Visit duration calculations</li>
+            <li>Time-based filtering (like <em>"Evening Visitors"</em>)</li>
+            <li>Creating clean visuals in Power BI</li>
+        </ul>
+
+        <section id="feature-engineering">
+            <h2>Feature Engineering for Age Group, Play Type, Visit Duration, and Parent Status</h2>
+            <pre><code class="python">
+          import pandas as pd
+          from datetime import datetime
+          
+          # Load Excel file
+          df = pd.read_excel("time_cleaned.xlsx")
+          
+          # --- Age_Group ---
+          def get_age_group(age):
+              if age <= 1:
+                  return "0-1 yrs"
+              elif age <= 3:
+                  return "2–3 yrs"
+              elif age <= 5:
+                  return "4–5 yrs"
+              elif age <= 7:
+                  return "6–7 yrs"
+              elif age <= 11.5:
+                  return "8-9 yrs"
+              else:
+                  return None
+          
+          df["Age_Group"] = df["AGE"].apply(get_age_group)
+          
+          # --- Play ---
+          df["Play"] = df["Total_Revenue"].apply(lambda x: "Membership" if x > 600 else "One-Time")
+          
+          # --- Visit_Duration (convert to datetime first) ---
+          def parse_time(t):
+              if pd.isnull(t):
+                  return None
+              if isinstance(t, datetime):
+                  return t
+              try:
+                  return datetime.strptime(str(t), "%H:%M:%S")
+              except:
+                  try:
+                      return datetime.strptime(str(t), "%H:%M")
+                  except:
+                      return None
+          
+          def get_duration(start, end):
+              start = parse_time(start)
+              end = parse_time(end)
+              if start and end:
+                  duration = (end - start).total_seconds() / 3600
+                  if duration < 0:
+                      duration += 24
+                  return round(duration, 2)
+              return None
+          
+          df["Visit_Duration"] = df.apply(lambda row: get_duration(row["CHECK IN"], row["CHECK OUT"]), axis=1)
+          
+          # --- Parent Status ---
+          df["Parent_Status"] = df["PARENT"].apply(lambda x: "Parent Not Present" if pd.isnull(x) else "Parent Present")
+          
+          # Save to Excel
+          df.to_excel("time_cleaned_updated.xlsx", index=False)
+            </code></pre>
+        </section>
+
+        <h2>Purpose of This Process:</h2>
+        <p>This process aims to create new feature columns that provide additional insights based on existing data. It
+            categorizes children by age, classifies the type of play session, calculates visit duration, and determines
+            the parent’s presence.</p>
+
+        <h2>Create Age Group Column (<code>Age_Group</code>)</h2>
+        <p><strong>Function:</strong> <code>get_age_group(age)</code></p>
+        <ul>
+            <li>Categorizes the children's age into predefined age groups (e.g., "0-1 yrs", "2-3 yrs") based on their
+                age values.</li>
+            <li>The <code>AGE</code> column is used to determine the appropriate group.</li>
+            <li><strong>Result:</strong> Adds a new column <code>Age_Group</code> indicating the age group of each
+                child.</li>
+        </ul>
+
+        <h2>Create Play Type Column (<code>Play</code>)</h2>
+        <p><strong>Logic:</strong></p>
+        <ul>
+            <li>The type of play session is categorized based on the <code>Total_Revenue</code> for each visit.</li>
+            <li>If the <code>Total_Revenue</code> exceeds 600, the session is classified as a
+                <strong>Membership</strong>; otherwise, it's a <strong>One-Time</strong> visit.
+            </li>
+            <li><strong>Result:</strong> Adds a new column <code>Play</code>, providing insights into the type of play
+                session (Membership or One-Time).</li>
+        </ul>
+
+        <h2>Create Visit Duration Column (<code>Visit_Duration</code>)</h2>
+        <p><strong>Functions:</strong></p>
+        <ul>
+            <li><code>parse_time(t)</code>: Converts time strings into datetime objects for accurate time calculations.
+            </li>
+            <li><code>get_duration(start, end)</code>:
+                <ul>
+                    <li>Calculates the duration of a visit by subtracting <code>CHECK IN</code> from
+                        <code>CHECK OUT</code> times.
+                    </li>
+                    <li>Converts the difference into hours (in decimal format).</li>
+                    <li>Accounts for cases where the end time might cross midnight (adjusts for negative durations).
+                    </li>
+                </ul>
+            </li>
+            <li><strong>Result:</strong> Adds a new column <code>Visit_Duration</code>, providing the total visit
+                duration in hours for each child.</li>
+        </ul>
+
+        <h2>Create Parent Status Column (<code>Parent_Status</code>)</h2>
+        <p><strong>Logic:</strong></p>
+        <ul>
+            <li>Checks if the <code>PARENT</code> column is null:</li>
+            <li>If null, the parent is marked as <strong>"Parent Not Present"</strong>.</li>
+            <li>If non-null, the parent is marked as <strong>"Parent Present"</strong>.</li>
+            <li><strong>Result:</strong> Adds a new column <code>Parent_Status</code>, indicating whether a parent was
+                present during the visit.</li>
+        </ul>
+
+        <section id="visit-duration-12hr">
+            <h2>Visit Duration Calculation with 12-Hour Format Parsing</h2>
+            <pre><code class="python">
+          from datetime import datetime
+          import pandas as pd
+          
+          # Load the Excel file
+          df = pd.read_excel("time_cleaned_updated.xlsx")
+          
+          # --- Parse 12-hour format with AM/PM ---
+          def parse_time(t):
+              try:
+                  return datetime.strptime(t.strip(), "%I:%M %p")
+              except:
+                  return None
+          
+          # --- Calculate Visit Duration ---
+          def get_duration(start, end):
+              start = parse_time(start)
+              end = parse_time(end)
+              if start and end:
+                  duration = (end - start).total_seconds() / 3600
+                  if duration < 0:
+                      duration += 24  # Adjust for overnight stays
+                  return round(duration, 2)
+              return None
+          
+          df["Visit_Duration"] = df.apply(lambda row: get_duration(row["CHECK IN"], row["CHECK OUT"]), axis=1)
+          
+          # Save result
+          df.to_excel("time_cleaned_updated.xlsx", index=False)
+            </code></pre>
+        </section>
+        <h2>Purpose of This Process:</h2>
+        <p>Parsing time values in 12-hour AM/PM format for the <code>CHECK IN</code> and <code>CHECK OUT</code> columns.
+            Calculating the visit duration based on these parsed times. The new <code>Visit_Duration</code> column is
+            added to represent the total time spent during a visit, measured in hours.</p>
+
+        <h2>Parsing Time in 12-Hour AM/PM Format</h2>
+        <p><strong>Function:</strong> <code>parse_time(t)</code></p>
+        <ul>
+            <li>This function tries to convert a string representation of time (in the 12-hour format with AM/PM) into a
+                datetime object.</li>
+            <li>The <code>datetime.strptime(t.strip(), "%I:%M %p")</code> line parses the time, where <code>%I</code> is
+                the hour in 12-hour format, <code>%M</code> is the minutes, and <code>%p</code> represents AM/PM.</li>
+            <li>If the parsing fails (e.g., due to an invalid time format), the function returns <code>None</code>.</li>
+        </ul>
+
+        <h2>Calculating Visit Duration</h2>
+        <p><strong>Function:</strong> <code>get_duration(start, end)</code></p>
+        <ul>
+            <li>This function calculates the duration between the <code>CHECK IN</code> and <code>CHECK OUT</code> times
+                (converted to datetime objects by <code>parse_time</code>).</li>
+            <li>If both start and end are successfully parsed:</li>
+            <ul>
+                <li>The duration is calculated by subtracting the <code>CHECK IN</code> time from the
+                    <code>CHECK OUT</code> time.
+                </li>
+                <li>The result is converted to hours by dividing the difference (in seconds) by 3600 (the number of
+                    seconds in an hour).</li>
+                <li>If the duration is negative (indicating the <code>CHECK OUT</code> occurred after midnight), 24
+                    hours are added to the duration to correctly account for overnight stays.</li>
+                <li>The final result is rounded to two decimal places.</li>
+            </ul>
+            <li>If any issue arises with parsing the times, <code>None</code> is returned.</li>
+        </ul>
+
+        <h2>Apply Duration Calculation to the Entire Dataset</h2>
+        <p>The <code>df.apply()</code> method applies the <code>get_duration</code> function to each row of the dataset
+            by passing the <code>CHECK IN</code> and <code>CHECK OUT</code> values to the function. The calculated visit
+            duration is stored in the new column <code>Visit_Duration</code>.</p>
+
+        <h2>Key Takeaways:</h2>
+        <ul>
+            <li><strong>Data Privacy:</strong> Safeguard personal information, ensuring it is only used for its intended
+                purposes with proper consent.</li>
+            <li><strong>Ethical Data Collection:</strong> Ensure fairness, transparency, and security in handling data,
+                and avoid bias.</li>
+            <li><strong>Security Measures:</strong> Implement encryption and secure data practices to prevent
+                unauthorized access.</li>
+            <li><strong>Informed Consent:</strong> Always ask for permission from data subjects and provide transparency
+                on data usage.</li>
+            <li><strong>Fairness in Analysis:</strong> Be cautious of biases in data and analysis to ensure fairness and
+                inclusivity.</li>
+        </ul>
+        <footer>
+            <p>© 2025 Kids Fun Zone. All rights reserved.</p>
+        </footer>
+
+        <script src="script.js"></script>
+</body>
+
+</html>
